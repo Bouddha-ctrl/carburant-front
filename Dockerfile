@@ -20,8 +20,8 @@ FROM nginx:stable-alpine AS production
 # copy built files from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# expose port 80
-EXPOSE 8081
+# expose port 8081
+EXPOSE 80
 
 # start nginx
 CMD ["nginx", "-g", "daemon off;"]
