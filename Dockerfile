@@ -21,7 +21,7 @@ FROM nginx:stable-alpine AS production
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # expose port 80
-EXPOSE 80
+EXPOSE 8080
 
 # start nginx
 CMD ["nginx", "-g", "daemon off;"]
