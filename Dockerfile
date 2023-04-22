@@ -18,10 +18,10 @@ RUN yarn build
 FROM nginx:stable-alpine AS production
 
 # copy built files from the build stage
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/carburant-front /usr/share/nginx/html
 
 # expose port 80
-EXPOSE 8080
+EXPOSE 80
 
 # start nginx
 CMD ["nginx", "-g", "daemon off;"]

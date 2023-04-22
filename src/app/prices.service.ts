@@ -10,7 +10,7 @@ import { throwError, Observable, BehaviorSubject } from 'rxjs';
 })
 export class PricesService {
   err: any;
-  root: string = 'https://carburant-backend-wbx6z537ha-ew.a.run.app';
+  root: string = 'https://carburant-backend-wbx6z537ha-no.a.run.app';
   //root: string = 'http://localhost:8080';
 
   private dieselPriceSubject: BehaviorSubject<number> = new BehaviorSubject(0);
