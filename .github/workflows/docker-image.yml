@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy to GCR
         run: |
-          gcloud run deploy carburant-backend --image gcr.io/carburant-backend/my-front-image:v1 --platform managed --region europe-southwest1 --allow-unauthenticated
+          gcloud run deploy carburant-frontend --image gcr.io/carburant-backend/my-front-image:v1 --platform managed --region europe-southwest1 --allow-unauthenticated
