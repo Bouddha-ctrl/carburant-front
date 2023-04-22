@@ -1,0 +1,118 @@
+.price_container {
+  height: 100%;
+}
+.prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: var(--price);
+  height: 100%;
+  padding-top: 50px;
+}
+
+.element {
+  height: 150px;
+  width: 30%;
+  min-width: 300px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.diesel {
+  color: var(--diesel1);
+}
+.essence {
+  color: var(--essence1);
+  overflow: hidden;
+}
+
+.titre {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1rem 1rem;
+  font-size: larger;
+}
+.price {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem 1rem 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 45px;
+}
+
+.diesel .titre {
+  background-color: var(--diesel2);
+}
+.diesel .price {
+  background-color: var(--diesel3);
+}
+
+.essence .titre {
+  background-color: var(--essence2);
+}
+.essence .price {
+  background-color: var(--essence3);
+}
+
+.blurred {
+  filter: blur(7px);
+}
+
+.vector-spinner {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: text-bottom;
+}
+
+.vector-spinner svg {
+  animation: rotate 2s linear infinite;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+}
+
+.vector-spinner circle {
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: circle 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circle {
+  0% {
+    stroke-dasharray: 1, 94;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 49, 94;
+    stroke-dashoffset: -24;
+  }
+  100% {
+    stroke-dasharray: 49, 94;
+    stroke-dashoffset: -70;
+  }
+}
+
+.blured {
+  filter: blur(7px);
+}

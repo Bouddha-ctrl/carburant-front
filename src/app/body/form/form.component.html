@@ -1,0 +1,389 @@
+<div class="form" (change)="calculePrice()">
+  <form class="row g-3">
+    <div class="form-content">
+      <div class="part1">
+        <div class="field">
+          <label for="cotation-group" class="form-label">Cotation</label>
+          <div class="input-group mb-3" id="cotation-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.cotation"
+              name="form.cotation"
+            />
+            <span class="input-group-text">$/T</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fret-group" class="form-label">FRET </label>
+          <div class="input-group mb-3" id="fret-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.fret"
+              name="form.fret"
+            />
+            <span class="input-group-text">$/T</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="taux-group" class="form-label">Taux de change</label>
+          <div class="input-group mb-3" id="taux-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.taux"
+              name="form.taux"
+            />
+            <span class="input-group-text">MAD/$</span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="part2">
+        <div class="field">
+          <label for="cotation2-group" class="form-label">Cotation</label>
+          <div class="input-group mb-3" id="cotation2-group">
+            <span class="input-group-text">1</span>
+            <input
+              type="number"
+              class="form-control"
+              [value]="(form.cotation * form.taux).toFixed(2)"
+              disabled
+            />
+            <span class="input-group-text">MAD/T</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fret2-group" class="form-label">FRET</label>
+          <div class="input-group mb-3" id="fret2-group">
+            <span class="input-group-text">2</span>
+            <input
+              type="number"
+              class="form-control"
+              [value]="(form.fret * form.taux).toFixed(2)"
+              disabled
+            />
+            <span class="input-group-text">MAD/T</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="taxePortuaires-group" class="form-label"
+            >Taxe portuaires</label
+          >
+          <div class="input-group mb-3" id="taxePortuaires-group">
+            <span class="input-group-text">3</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.taxePortuaires"
+              name="form.taxePortuaires"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="approche-group" class="form-label"
+            >Frais d'approche</label
+          >
+          <div class="input-group" id="approche-group">
+            <span class="input-group-text">4</span>
+            <input
+              type="number"
+              aria-label="fraisApprocheFixe"
+              class="form-control"
+              [(ngModel)]="form.fraisApprocheFixe"
+              name="form.fraisApprocheFixe"
+            />
+            <span class="input-group-text p-1">MAD</span>
+            <span class="input-group-text p-1">+</span>
+            <input
+              type="number"
+              aria-label="fraisApprocheVariable"
+              class="form-control"
+              [(ngModel)]="form.fraisApprocheVariable"
+              name="form.fraisApprocheVariable"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="taxeParafiscale-group" class="form-label"
+            >Taxe parafiscale</label
+          >
+          <div class="input-group mb-3" id="taxeParafiscale-group">
+            <span class="input-group-text">5</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.taxeParafiscale"
+              name="form.taxeParafiscale"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="remunerationStockage-group" class="form-label"
+            >Remuneration stockage</label
+          >
+          <div class="input-group mb-3" id="remunerationStockage-group">
+            <span class="input-group-text">6</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.remunerationStockage"
+              name="form.remunerationStockage"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="part3">
+        <div class="field">
+          <label for="prixRepriseTonne-group" class="form-label"
+            >Prix de reprise par tonne
+          </label>
+          <div class="input-group mb-3" id="prixRepriseTonne-group">
+            <span class="input-group-text">7</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixRepriseTonne"
+              name="form.prixRepriseTonne"
+              disabled
+            />
+            <span class="input-group-text">MAD/T</span>
+          </div>
+        </div>
+        <i class="bi bi-arrow-right"></i>
+        <div class="field">
+          <label for="prixReprise100Littres-group" class="form-label"
+            >Prix de reprise par 100 littres
+          </label>
+          <div class="input-group mb-3" id="prixReprise100Littres-group">
+            <span class="input-group-text">8</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixReprise100Littres"
+              name="form.prixReprise100Littres"
+              disabled
+            />
+            <span class="input-group-text">MAD/100L</span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="part4">
+        <div class="field">
+          <label for="tic-group" class="form-label">TIC</label>
+          <div class="input-group mb-3" id="tic-group">
+            <span class="input-group-text">9</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.tic"
+              name="form.tic"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="tva-group" class="form-label">TVA </label>
+          <div class="input-group mb-3" id="tva-group">
+            <span class="input-group-text">10</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.tva"
+              name="form.tva"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="creditDroit-group" class="form-label"
+            >Crédit de droit</label
+          >
+          <div class="input-group mb-3" id="creditDroit-group">
+            <span class="input-group-text">11</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.creditDroit"
+              name="form.creditDroit"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sousTotal-group" class="form-label">sous total</label>
+          <div class="input-group mb-3" id="sousTotal-group">
+            <span class="input-group-text">12</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.sousTotal"
+              name="form.sousTotal"
+              disabled
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fraisMargeDistribution-group" class="form-label"
+            >Frais et marges de distribution</label
+          >
+          <div class="input-group mb-3" id="fraisMargeDistribution-group">
+            <span class="input-group-text">13</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.fraisMargeDistribution"
+              name="form.fraisMargeDistribution"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prixVenteGrosHorsTva-group" class="form-label"
+            >Prix de vente en gros hors TVA</label
+          >
+          <div class="input-group mb-3" id="prixVenteGrosHorsTva-group">
+            <span class="input-group-text">14</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixVenteGrosHorsTva"
+              name="form.prixVenteGrosHorsTva"
+              disabled
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prixVenteGrosAvecTva-group" class="form-label"
+            >Prix de vente en gros, TVA comprise</label
+          >
+          <div class="input-group mb-3" id="prixVenteGrosAvecTva-group">
+            <span class="input-group-text">15</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixVenteGrosAvecTva"
+              name="form.prixVenteGrosAvecTva"
+              disabled
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="coulageDetaillants-group" class="form-label"
+            >Coulage Detaillants</label
+          >
+          <div class="input-group mb-3" id="coulageDetaillants-group">
+            <span class="input-group-text">16</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.coulageDetaillants"
+              name="form.coulageDetaillants"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="correctionVarioationThermique-group" class="form-label"
+            >Correction pour variation thermique</label
+          >
+          <div
+            class="input-group mb-3"
+            id="correctionVarioationThermique-group"
+          >
+            <span class="input-group-text">17</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.correctionVariationThermique"
+              name="form.correctionVariationThermique"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="margeDetail-group" class="form-label"
+            >Marge de detail
+          </label>
+          <div class="input-group mb-3" id="margeDetail-group">
+            <span class="input-group-text">18</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.margeDetail"
+              name="form.margeDetail"
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prixVenteDetailHorsTva-group" class="form-label"
+            >Prix de vente au detail hors TVA
+          </label>
+          <div class="input-group mb-3" id="prixVenteDetailHorsTva-group">
+            <span class="input-group-text">19</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixVenteDetailHorsTva"
+              name="form.prixVenteDetailHorsTva"
+              disabled
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prixVenteDetailAvecTva-group" class="form-label"
+            >Prix de vente au detail, TVA comprise
+          </label>
+          <div class="input-group mb-3" id="prixVenteDetailAvecTva-group">
+            <span class="input-group-text">20</span>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prixVenteDetailAvecTva"
+              name="form.prixVenteDetailAvecTva"
+              disabled
+            />
+            <span class="input-group-text">MAD</span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="price_container">
+  <div class="vector-spinner" *ngIf="dieselPrice == 0">
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M 12,2 L 12,6"></path>
+      <path d="M 12,18 L 12,22"></path>
+      <path d="M 4.93,4.93 L 7.76,7.76"></path>
+      <path d="M 16.24,16.24 L 19.07,19.07"></path>
+      <path d="M 2,12 L 6,12"></path>
+      <path d="M 18,12 L 22,12"></path>
+      <path d="M 4.93,19.07 L 7.76,16.24"></path>
+      <path d="M 16.24,7.76 L 19.07,4.93"></path>
+    </svg>
+  </div>
+
+  <div class="prices" [ngClass]="{ blured: dieselPrice == 0 }">
+    <div class="diesel element">
+      <div class="price">{{ dieselPrice }} DH</div>
+      <div class="titre">Diesel</div>
+    </div>
+    <div class="essence element">
+      <div class="price blurred">-- -- DH</div>
+      <div class="titre">Essence</div>
+    </div>
+  </div>
+</div>

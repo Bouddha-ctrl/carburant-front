@@ -1,0 +1,32 @@
+::ng-deep :root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --body: #ed6a5a;
+  --indep: #c5e7e2;
+  --indep2: #5d576b;
+
+  --header: #ddffd9;
+
+  --navBarPrice: #e63119;
+  --navBarForm: #e843b0;
+  --navBarInfo: #00405c;
+
+  --price: #fad6d1;
+  --form: white; /*#f1dae8*/
+  --info: #ccefff;
+
+  --diesel1: #ff6600;
+  --diesel2: #f2c13a;
+  --diesel3: #f8d77e;
+  --diesel: #f8d77e;
+
+  --essence1: #1b9d0c;
+  --essence2: #5fd068;
+  --essence3: #adffb4;
+  --essence: #1b9d0c;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Poppins', sans-serif;
+}

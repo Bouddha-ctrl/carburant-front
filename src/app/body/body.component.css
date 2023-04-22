@@ -1,0 +1,12 @@
+.content {
+  height: 80vh;
+}
+.body {
+}
+.alert {
+  background-color: var(--indep2) !important;
+  padding: 10px;
+  display: flex;
+  font-size: larger;
+  font-family: 'Poppins', sans-serif;
+}

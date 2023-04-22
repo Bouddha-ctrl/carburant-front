@@ -1,0 +1,8 @@
+<div class="body">
+  <app-navbar (navBarEvent)="onDisplay($event)"></app-navbar>
+  <div class="content">
+    <app-prices [hidden]="view != 'price'"></app-prices>
+    <app-form [hidden]="view != 'form'"></app-form>
+    <app-info [hidden]="view != 'info'"></app-info>
+  </div>
+</div>
