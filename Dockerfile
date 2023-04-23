@@ -21,9 +21,5 @@ FROM nginx:stable-alpine AS production
 COPY --from=build /app/dist/carburant-front /usr/share/nginx/html
 
 
-# set environment variables
-ENV PORT=3000
-
-
 # start nginx
 CMD ["nginx", "-g", "daemon off;"]
