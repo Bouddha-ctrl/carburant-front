@@ -23,7 +23,8 @@ COPY --from=build /app/dist/carburant-front /usr/share/nginx/html
 # expose port 80
 EXPOSE 80
 
-ENV PORT=3000
+# set environment variables
+ENV PORT = 3000
 
 
 # start nginx
